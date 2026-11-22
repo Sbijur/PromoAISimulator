@@ -147,7 +147,7 @@ def style_kpis(df):
 # =============================================================================== sidebar
 with st.sidebar:
     st.title("🥤 PromoAI simulator")
-    st.caption("LightGBM forecast → piecewise-linear demand → MILP promotion calendar. Synthetic data.")
+    st.caption("LightGBM forecast → piecewise-linear demand → MILP promotion calendar.")
 
     up = st.file_uploader("Load rules JSON (paper Appendix B format)", type="json")
     if up is not None and st.session_state.get("_last_upload") != up.file_id:
@@ -229,7 +229,7 @@ CFG = cfg_from_state()
 # =============================================================================== main: inputs
 st.title("PromoAI: promotion calendar simulator")
 st.caption("Rebuild of the PromoAI system in Llenas et al. (2026), *PepsiCo Deploys AI-Driven Pricing and Promotion "
-           "Optimization at Scale*. Change the inputs, then press **▶ Run model** in the sidebar. All data are synthetic.")
+           "Optimization at Scale*. Change the inputs, then press **▶ Run model** in the sidebar.")
 
 tabs = st.tabs(["📥 Inputs", "🗓️ Optimal calendar", "✏️ Edit & compare", "🧭 Scenarios", "🎲 Reality simulation",
                 "📈 Forecast", "〽️ Demand curves", "✅ Tests", "ℹ️ How it works"])
@@ -746,7 +746,7 @@ with tabs[8]:
     st.markdown("""
 ### What the simulator does
 
-**1. Sales history (synthetic).** Weekly sales are simulated for each product group (PPG), with holidays, seasons,
+**1. Sales history.** Weekly sales are simulated for each product group (PPG), with holidays, seasons,
 random past promotions and *rival discount pressure*. Some realistic data errors are planted and then cleaned
 (paper §2.1.1). The **Market & forecast data** controls change this world.
 
@@ -777,5 +777,5 @@ market with noise. **Tests** runs hand-solved cases and a brute-force optimality
 - **Big-M (paper eq. 7):** demand is switched on or off with big-M inequalities.
 - **Convex hull (default):** the same calendars, but a tighter relaxation, so the solver proves quality faster.
 
-*Data are synthetic. Results show how the method behaves, not PepsiCo's numbers.*
+*Results show how the method behaves, not PepsiCo's numbers.*
 """)
