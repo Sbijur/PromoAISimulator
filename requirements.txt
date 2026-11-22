@@ -1,0 +1,7 @@
+streamlit>=1.40
+altair>=5
+numpy
+pandas
+scipy
+lightgbm>=4
+highspy>=1.7
